@@ -1,0 +1,17 @@
+{
+	"name": "potaka/bbcode-bundle",
+	"type": "library",
+	"description": "bundle for php parser for bb code",
+    "license": "MIT",
+	"require": {
+        "php": ">=7.0"
+	},
+    "require-dev": {
+        "phpUnit/phpUnit": "5.6.*"
+    },
+	"autoload": {
+		"psr-0": {
+			"Potaka": "src/"
+		}
+	}
+}
