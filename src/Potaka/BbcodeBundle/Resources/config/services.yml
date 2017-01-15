@@ -1,0 +1,14 @@
+services:
+    potaka.bbcode.factory:
+        class: Potaka\BbCode\Factory
+
+    potaka.bbcode.tokenizer:
+        class: Potaka\BbCode\Tokenizer\Tokenizer
+
+    potaka.bbcode.bbcode.full:
+        class: Potaka\BbCode\BbCode
+        factory: ["@potaka.bbcode.factory", getFullBbCode]
+
+    potaka.bbcode.full:
+        class: Potaka\BbcodeBundle\BbCode\TextToHtml
+        arguments: ["@potaka.bbcode.bbcode.full", "@potaka.bbcode.tokenizer"]
