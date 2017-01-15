@@ -15,3 +15,4 @@ $html = $getHtml('[b]bold"[/b]'); // <b>bold"</b>
 ```
 
 > Note that you should pass html escaped string!
+> `potaka.bbcode.full` is `FullBbCode` from [bbCode](https://github.com/angelk/bbCode)
