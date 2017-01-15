@@ -5,7 +5,7 @@
     "license": "MIT",
 	"require": {
         "php": ">=7.0",
-        "potaka/bbcode": "0.1.*"
+        "potaka/bbcode": "~0.1"
 	},
     "require-dev": {
         "phpUnit/phpUnit": "5.6.*"
