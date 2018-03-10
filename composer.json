@@ -3,10 +3,11 @@
 	"type": "library",
 	"description": "bundle for php parser for bb code",
     "license": "MIT",
-	"require": {
+    "require": {
         "php": ">=7.0",
-        "potaka/bbcode": "~0.1"
-	},
+        "potaka/bbcode": "~0.1",
+        "psr/cache": "^1.0"
+    },
     "require-dev": {
         "phpUnit/phpUnit": "5.6.*"
     },
