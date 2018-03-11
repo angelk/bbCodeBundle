@@ -75,5 +75,7 @@ class TextToHtmlCache implements TextToHtmlInterface
         $cachedItem->expiresAfter($this->cacheExpireTime);
 
         $this->cachePool->save($cachedItem);
+
+        return $bbCodeTransformed;
     }
 }
