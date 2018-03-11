@@ -6,13 +6,20 @@ use Potaka\BbCode\BbCode;
 use Potaka\BbCode\Tokenizer\Tokenizer;
 
 /**
- * Description of TextToHtml
+ * Escape string with htmlspecialchars and do the bbcode
  *
  * @author po_taka <angel.koilov@gmail.com>
  */
-class TextToHtml
+class TextToHtml implements TextToHtmlInterface
 {
+    /**
+     * @var BbCode
+     */
     private $bbCode;
+
+    /**
+     * @var Tokenizer
+     */
     private $tokenizer;
 
     public function __construct(BbCode $bbCode, Tokenizer $tokenizer)
@@ -22,16 +29,19 @@ class TextToHtml
     }
 
     /**
-     * Transform string to html using bb code.
-     * You must escape the html!
+     * Transform string to html escaped string with applied bb-code.
      *
      * @param string $text
      * @return string
      */
     public function getHtml(string $text) : string
     {
-        $tokenized = $this->tokenizer->tokenize($text);
+        $textAsHtml = htmlspecialchars($text, ENT_QUOTES);
+        $textWithNewLines = nl2br($textAsHtml);
+
+        $tokenized = $this->tokenizer->tokenize($textWithNewLines);
         $html = $this->bbCode->format($tokenized);
+
         return $html;
     }
 }
